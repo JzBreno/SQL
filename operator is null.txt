@@ -1,0 +1,4 @@
+use sakila;
+select * from address
+--mostrando campos onde o endereço2 é nulo
+where address2 IS NULL;

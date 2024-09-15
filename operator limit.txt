@@ -1,0 +1,7 @@
+use sakila;
+--mostrando os 10 primeiros
+select * from actor
+limit 10;
+--mostrando os 10 primeiros com limit apartir do indice 5
+select * from actor
+limit 5,10;

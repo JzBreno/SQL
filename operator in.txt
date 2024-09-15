@@ -1,0 +1,12 @@
+--usando o banco sakila
+use sakila;
+-- mostrando tabelas
+show tables;
+-- mostrando todas informações de endereço
+select * from address;
+--descrevendo os dados de endereço
+describe address;
+--mosttrando todos os dados de endereço onde 
+-- a propriedade district tem ('alberta','QLD')
+select * from address
+where district in ('alberta', 'QLD');

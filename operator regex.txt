@@ -1,0 +1,21 @@
+use sakila;
+select * from actor
+-- com regexp tem uso similar ao like, porem com mais funcionalidades
+-- nesse caso ele pega todos que contem a letra 'a'
+where first_name Regexp 'a';
+
+select * from actor
+-- nesse caso é os que começam com a letra 'a'
+where first_name regexp '^a';
+
+select *from actor
+-- nessa caso busca os que começam com a ou b
+where first_name regexp '^a|^d';
+
+select * from actor
+-- nesse caso temos os filtros do que juntam as combinações com 'ga' e 'ea'
+where first_name regexp '[ge]a';
+
+select * from actor
+-- nesse caso tem que começar com 'ga' ou 'ea' ou 'ra'
+where first_name regexp '^[ger]a';

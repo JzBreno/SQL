@@ -1,0 +1,6 @@
+use sakila;
+show tables;
+select * from payment;
+--mostrando em payment tudo que esta entre 1.99 e 3.99
+select * from payment
+where amount BETWEEN 1.99 and 3.99;

@@ -1,0 +1,15 @@
+select * from actor;
+--iremos usar o like para mostrar atores que começam com a letra 'a'
+-- like se entende 'como' nessa pesquisa
+select * from actor
+where first_name LIKE 'A%';
+-- a % indica que o resto do conteudo pode ser variavel, basta começar com A
+-- essa porcentagem pode vir antes e depois da letra que queremos usar como padrao de busca
+select * from actor
+where first_name like 'AL%';
+-- 
+select * from actor
+where first_name LIKE 'ALB%';
+--
+select * from actor 
+where first_name like '%c';

@@ -1,0 +1,51 @@
+use sakila;
+-- selecionando colunas das tabelas costumer e payment
+select 
+    customer.customer_id,
+     customer.first_name,
+      customer.last_name,
+      payment.rental_id,
+       payment.amount
+
+from customer
+-- juntando com join com payment e estabalecendo o criterio dos ids 
+-- serem iguais com a tag "on"
+JOIN payment 
+on customer.customer_id = payment.payment_id;
+
+-- usando alias(abreviação)
+select 
+    cus.customer_id,
+     cus.first_name,
+      cus.last_name,
+      pay.rental_id,
+       pay.amount
+--customer recebe apelido de cus para ficar mais limpo
+from customer cus
+-- juntando com join com payment e estabalecendo o criterio dos ids 
+-- serem iguais com a tag "on"
+-- payment recebe apelido de pay
+JOIN payment pay
+on cus.customer_id = pay.payment_id;
+
+--utilizando join para mais que 2 tabelas
+-- iremos adicionar o address desse 
+select 
+    cus.customer_id,
+     cus.first_name,
+      cus.last_name,
+      adr.address,
+      pay.rental_id,
+       pay.amount
+       
+-- customer recebe apelido de cus para ficar mais limpo
+from customer cus
+-- juntando com join com payment e estabalecendo o criterio dos ids 
+-- serem iguais com a tag "on"
+-- payment recebe apelido de pay
+JOIN payment pay
+-- quando costumer_id for igual ao payment_id
+    on cus.customer_id = pay.payment_id
+JOIN address adr 
+-- quando costumer_id for igual ao address_id
+    on cus.customer_id = adr.address_id;
