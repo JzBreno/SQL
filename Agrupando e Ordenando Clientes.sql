@@ -5,9 +5,9 @@ select p.customer_id,concat(c.first_name," ",c.last_name) as name, sum(p.amount)
 from payment p
 join customer c 
 /*join feito com os campos customer_id*/
-on c.customer_id = p.customer_id
+USING(customer_id)
 /*relatio agrupado ao id do usurio ID -> Relatorio*/
-group by p.customer_id
+group by p.customer_ids
 /*ordenando do valor maior pro menor*/
 order by gasto_total desc
 /*adicinando para aoenas os primeiros 10 clientes que mais compraram*/
